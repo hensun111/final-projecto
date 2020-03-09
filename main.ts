@@ -1,9 +1,9 @@
+namespace SpriteKind {
+    export const elec = SpriteKind.create()
+}
 function projectiles () {
 	
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    game.over(false)
-})
 function waves () {
     mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -125,7 +125,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    game.splash("you caught up didn't think you were strong enough")
+    game.showLongText("you actually caught up to me now you die", DialogLayout.Bottom)
     mySprite3.destroy()
     boss_guy = sprites.create(img`
 . . . . . . f f . . . . . . . . . f . . 
@@ -153,16 +153,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
+`, SpriteKind.Enemy)
     boss_guy.setPosition(156, 57)
-    boss_guy.setVelocity(0, 10)
-    mySprite.setFlag(SpriteFlag.BounceOnWall, true)
-})
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, otherSprite) {
-    wave1.destroy()
-    wave2.destroy()
-    wave3.destroy()
-    wave4.destroy()
+    boss_guy.setVelocity(0, 50)
+    boss_guy.setFlag(SpriteFlag.BounceOnWall, true)
+    boss_guy.setFlag(SpriteFlag.StayInScreen, true)
 })
 function surfer () {
     mySprite2 = sprites.create(img`
@@ -191,15 +186,16 @@ function surfer () {
 f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
 . f f f f f f f f f f f f f f f f f f f f f f f f f . 
 `, SpriteKind.Player)
+    mySprite2.setPosition(1, 76)
     controller.moveSprite(mySprite2)
 }
 let projectile: Sprite = null
+let electricity: Sprite = null
 let wave4: Sprite = null
 let wave3: Sprite = null
 let wave2: Sprite = null
 let wave1: Sprite = null
 let boss_guy: Sprite = null
-let mySprite3: Sprite = null
 let mySprite2: Sprite = null
 let projectile2: Sprite = null
 let wind4: Sprite = null
@@ -207,33 +203,17 @@ let wind3: Sprite = null
 let wind2: Sprite = null
 let wind: Sprite = null
 let mySprite: Sprite = null
+let mySprite3: Sprite = null
 let amm = 0
 scene.setTileMap(img`
-9 1 1 1 1 9 9 9 9 9 1 1 1 1 1 . . . . . . . . . . 
-9 1 1 1 1 1 9 9 1 1 1 1 1 1 1 . . . . . . . . . . 
-9 1 1 1 1 1 9 9 1 1 1 1 1 1 1 . . . . . . . . . . 
-9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 . . . . . . . . . . 
-8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 . . . . . . . . . . 
-8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 . . . . . . . . . . 
-8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 . . . . . . . . . . 
-8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 . . . . . . . . . . 
-8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 . . . . . . . . . . 
-8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . 
+9 1 1 1 1 9 9 9 9 9 1 1 1 1 1 
+9 1 1 1 1 1 9 9 1 1 1 1 1 1 1 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
 `)
 waves()
 surfer()
@@ -258,8 +238,60 @@ scene.setTile(9, img`
 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
 `, true)
+mySprite3 = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f f . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f f f . . . . . . . . . . . . . . 
+. . . . . . . . f f f f . . . . . . . . . . . . . . . . . . . . . f f f f . . . . . . . . . . . . . 
+. . . . . . . f f f f f f f f f . . . . . . . . . . . . . . . . f 5 f f f . . . . . . . . . . . . . 
+. . . . . . . . f f f f 5 5 5 5 f f f . . . . . . . . . . . . . f 5 5 f f . . . . . . . . . . . . . 
+. . . . . f f . . f f f 5 5 5 5 5 5 5 f f . . . . f f f f f f f 5 5 5 5 f . . . . . . . . . . . . . 
+. . . . . f 5 f . . f f f 5 5 5 5 5 5 5 5 f f f f 5 5 5 5 5 5 5 f f 5 5 f . . . . . . . . . . . . . 
+. . . . f 5 5 5 f . . f f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 5 f . . . . . . . . . . . . . 
+. . . . f 5 5 5 f . . . . f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f . . . . . . . . . . . . . . 
+. . . f 5 5 5 5 5 f . . . . f f 5 5 5 5 5 5 5 5 f f 5 5 5 5 5 5 5 5 5 f . . . . . . . . . . . . . . 
+. . . f 5 5 5 5 5 f . . . . . . f f 5 5 5 5 5 f f 5 f 5 5 5 5 5 5 f f 5 f . . . . . . . . . . . . . 
+. . f 5 5 5 5 5 5 5 f . . . . . f 5 5 5 5 5 5 f f f f 5 5 5 5 5 5 f 5 f f . . . . . . . . . . . . . 
+. . f 5 5 5 5 5 5 5 f . . . . . f 5 5 5 5 5 5 5 f f 5 5 5 5 5 5 5 f f f 5 f . . . . . . . . . . . . 
+. . f 5 5 5 5 5 5 5 5 f . . . . f 5 5 5 5 2 2 5 5 5 5 5 5 5 5 f 5 5 f 5 5 f . . . . . . . . . . . . 
+. . . f 5 5 5 5 5 5 5 f . . . f 5 5 5 5 2 2 2 2 5 5 5 5 5 5 5 5 5 5 5 5 5 f . . . . . . . . . . . . 
+. . . . f 5 5 5 5 5 5 5 f . . f 5 5 5 5 2 2 2 2 5 5 5 f 5 5 f f 5 f 5 5 2 2 f . . . . . . . . . . . 
+. . . . . f 5 5 5 5 5 5 f . f 5 5 5 5 5 5 2 2 5 5 5 5 5 f f 5 5 f 5 5 2 2 2 f . . . . . . . . . . . 
+. . . . . . f 5 5 5 5 f . . f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 2 2 2 f . . . . . . . . . . . 
+. . . . . . f 5 5 5 f . . f 5 5 5 5 5 5 5 5 f f 5 5 5 5 5 5 5 5 5 5 5 5 2 f . . . . . . . . . . . . 
+. . . . . f 5 5 5 f . . . f f 5 5 5 5 5 f f 5 5 f 5 5 5 5 5 5 5 5 5 5 5 f . . . . . . . . . . . . . 
+. . . . f 5 5 5 f . . . f f f f 5 5 5 f 5 5 5 5 f 5 5 5 5 5 5 5 5 5 5 f . . . . . . . . . . . . . . 
+. . . . f 5 5 5 5 f . . f f 5 5 5 5 5 5 5 5 5 5 5 f 5 5 5 5 5 5 5 5 5 f . . . . . . . . . . . . . . 
+. . . . . f 5 5 5 5 f f 5 5 5 5 5 5 5 5 5 5 5 f f 5 5 5 5 5 5 5 5 5 5 f f f . . . . . . . . . . . . 
+. . . . . . f 5 5 5 5 f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 5 5 f . . . . . . . . . . . 
+. . . . . . . f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 5 5 5 f . . . . . . . . . . 
+. . . . . . . f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 5 5 5 f . . . . . . . . . . 
+. . . . . . . f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 5 5 5 f . . . . . . . . . . . 
+. . . . . . f 5 5 5 5 5 5 5 5 5 5 5 5 f f f 5 5 5 5 5 5 5 5 5 5 5 5 f f f f . . . . . . . . . . . . 
+. . . . . . . f f 5 5 5 5 5 5 5 5 5 5 5 5 5 f 5 5 5 5 5 5 5 5 5 5 5 f . . . . . . . . . . . . . . . 
+. . . . . . . . . f f 5 5 5 5 5 5 5 5 5 5 5 5 f 5 5 5 5 5 5 5 5 5 f . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . f 5 5 5 5 5 5 5 5 5 5 5 f 5 5 5 5 5 5 5 5 5 f . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . f 5 5 5 5 5 5 5 5 5 5 5 f f f f f f f f f f f f f f f f . . . . . . . . . . . 
+. . . . . . . . . . . . f f 5 5 5 f f f f f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f f f f . . . . . . . . 
+. . . . . . . . . . . . f f f f f 9 9 9 9 9 9 9 6 6 6 6 6 6 6 6 6 6 6 9 9 9 f 9 9 9 f f . . . . . . 
+. . . . . . . . f f f f 9 9 9 9 9 9 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 f 9 9 9 9 9 f f f . . . 
+. . . . . . f f 9 9 9 9 9 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 f 6 6 6 9 9 9 9 9 f f . . 
+. . . . f f 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 f f 6 6 6 6 6 6 9 9 9 f f . . 
+. . . f 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 f f f f f 6 6 6 6 6 6 6 6 6 9 f f . . . 
+. . . f 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 f f f f 6 6 6 6 6 6 6 6 6 6 6 6 6 f f f . . . . 
+. . . . f f f 6 6 6 6 6 6 6 6 6 6 6 6 6 6 f f f f f 6 6 6 6 6 6 6 6 6 6 6 6 6 f f f f . . . . . . . 
+. . . . . . . f f f f 6 6 f 6 6 6 6 6 6 f 6 6 6 6 6 6 6 6 6 6 6 6 6 f f f f f . . . . . . . . . . . 
+. . . . . . . . . . . f f f 6 6 6 6 6 f 6 6 6 6 6 6 6 f f f f f f f . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . f 6 6 6 6 f f f f f f f f f . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . f 6 6 6 f . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . f f f . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+mySprite3.setPosition(87, 61)
+mySprite3.setVelocity(100, 0)
 game.onUpdate(function () {
-    if (info.score() == 50) {
+    if (info.score() == 1000) {
         info.changeScoreBy(10)
         mySprite3 = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . 
@@ -318,6 +350,7 @@ game.onUpdate(function () {
     wave2.setKind(SpriteKind.Food)
     wave3.setKind(SpriteKind.Food)
     wave4.setKind(SpriteKind.Food)
+    electricity.setKind(SpriteKind.elec)
     if (amm == 0) {
         mySprite2.say("n0 ammo")
     } else {
@@ -345,7 +378,7 @@ game.onUpdateInterval(5000, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, wind, Math.randomRange(-40, -300), 0)
+`, wind, -50, 0)
     animation.runImageAnimation(
     wave1,
     [img`
@@ -387,6 +420,34 @@ game.onUpdateInterval(5000, function () {
 })
 game.onUpdateInterval(1000, function () {
     amm += 1
+    electricity = sprites.createProjectileFromSprite(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . 5 5 . . . . . . . . . . . . . . . . . 
+. . . . . . 5 5 5 . . . . . . . 5 5 . . . . . . . . 
+. . . . . . 5 5 5 . . . . . . . 5 5 . . . . . . . . 
+. . . . 5 5 5 5 5 5 . . . . . 5 5 5 5 . . . . . . . 
+. . . 5 5 5 5 5 5 5 5 . . . 5 5 5 5 5 . . . . . . . 
+. . 5 5 5 5 5 5 5 5 5 5 . 5 5 5 5 5 5 5 . . . . . . 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. . . . . 5 5 5 5 5 . . . . . . . . . 5 5 5 5 5 . . 
+. . . . . . 5 5 5 . . . . . . . . . . . 5 5 5 5 . . 
+. . . . . . 5 5 . . . . . . . . . . . . . 5 5 . . . 
+. . . . . . . 5 . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . 
+`, boss_guy, -50, 0)
 })
 game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSprite(img`
@@ -406,7 +467,7 @@ game.onUpdateInterval(1000, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, mySprite, Math.randomRange(-40, -500), 0)
+`, mySprite, -50, 0)
     animation.runImageAnimation(
     projectile,
     [img`
@@ -464,7 +525,7 @@ game.onUpdateInterval(1000, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, wind3, Math.randomRange(-40, -300), 0)
+`, wind3, -50, 0)
     animation.runImageAnimation(
     wave3,
     [img`
@@ -522,7 +583,7 @@ game.onUpdateInterval(1000, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, wind2, Math.randomRange(-40, -300), 0)
+`, wind2, -50, 0)
     animation.runImageAnimation(
     wave2,
     [img`
@@ -580,7 +641,7 @@ game.onUpdateInterval(1000, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, wind4, Math.randomRange(-40, -300), 0)
+`, wind4, -50, 0)
     animation.runImageAnimation(
     wave4,
     [img`

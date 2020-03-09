@@ -4,7 +4,9 @@
         "device": "*",
         "palette": "*",
         "color-coded-tilemap": "*",
-        "animation": "*"
+        "animation": "*",
+        "storyboard": "*",
+        "Color Fading": "github:jwunderl/pxt-color#v0.0.32"
     },
     "description": "",
     "files": [
