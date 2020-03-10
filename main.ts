@@ -1,6 +1,7 @@
 namespace SpriteKind {
     export const elec = SpriteKind.create()
     export const boi = SpriteKind.create()
+    export const deploma = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -80,6 +81,43 @@ namespace myTiles {
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.boi, function (sprite, otherSprite) {
+    game.showLongText("you actually caught up to me now you die", DialogLayout.Bottom)
+    mySprite3.destroy()
+    boss_guy = sprites.create(img`
+. . . . . . f f . . . . . . . . . f . . 
+. . . . . f e f . . . . . . . . f 5 f . 
+. . . . . f 5 f . . . . . . . f 5 4 4 f 
+. . . . f 5 5 f . . . . f f f 5 4 4 4 f 
+. . . . f 5 5 f . . f f e e f 4 4 4 f . 
+. . . f 5 5 5 5 f f 5 5 e f 4 4 4 f . . 
+. . f 5 5 5 5 5 5 5 5 5 f f 4 4 f . . . 
+. f 1 5 5 5 5 5 5 5 5 5 f . f 4 4 f . . 
+. f f 5 5 5 5 5 5 5 5 5 f . f 4 4 f . . 
+. f 5 5 5 5 1 f 5 5 5 5 5 f f 4 f . . . 
+. . f 5 5 5 f f 5 5 5 5 4 f f f . . . . 
+. . . f 4 5 5 5 2 2 5 4 4 4 f . . . . . 
+. . . f 4 5 5 5 2 4 4 4 e e f . . . . . 
+. 1 f 5 4 4 4 4 4 4 5 4 4 4 f . . . . . 
+. . . f f 5 5 5 5 5 5 4 4 e f . . . . . 
+. . . . f 4 5 5 5 5 5 4 4 4 f . . . . . 
+. . . f 4 f 4 4 4 4 4 4 4 4 f . . . . . 
+. . . f f f f f 5 5 5 4 4 f . . . . . . 
+. . . . . . . . f f f 4 f f . . . . . . 
+. . . . . . . . . f 5 5 4 f . . . . . . 
+. . . . . . . . . . f f f . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+    boss_guy.setPosition(156, 57)
+    boss_guy.setVelocity(0, 50)
+    boss_guy.setFlag(SpriteFlag.BounceOnWall, true)
+    boss_guy.setFlag(SpriteFlag.StayInScreen, true)
+    info.player2.setScore(10)
+    game.showLongText("level 3 \"leader\" defeat him with your knowledge", DialogLayout.Bottom)
+})
 function projectiles () {
 	
 }
@@ -116,53 +154,35 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
-    info.player2.setScore(1000)
+    game.showLongText("congratulations you made it to the final stage \"america\"", DialogLayout.Bottom)
     scene.setTileMap(img`
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
+f f f f f f f f f f 
+f f f f f f f f f f 
+f f f f f f f f f f 
+f f f f f f f f f f 
+f f f f f f f f f f 
+f f f f f f f f f f 
+f f f f f f f f f f 
+f f f f f f f f f f 
 `)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    game.showLongText("you actually caught up to me now you die", DialogLayout.Bottom)
-    mySprite3.destroy()
-    boss_guy = sprites.create(img`
-. . . . . . f f . . . . . . . . . f . . 
-. . . . . f e f . . . . . . . . f 5 f . 
-. . . . . f 5 f . . . . . . . f 5 4 4 f 
-. . . . f 5 5 f . . . . f f f 5 4 4 4 f 
-. . . . f 5 5 f . . f f e e f 4 4 4 f . 
-. . . f 5 5 5 5 f f 5 5 e f 4 4 4 f . . 
-. . f 5 5 5 5 5 5 5 5 5 f f 4 4 f . . . 
-. f 1 5 5 5 5 5 5 5 5 5 f . f 4 4 f . . 
-. f f 5 5 5 5 5 5 5 5 5 f . f 4 4 f . . 
-. f 5 5 5 5 1 f 5 5 5 5 5 f f 4 f . . . 
-. . f 5 5 5 f f 5 5 5 5 4 f f f . . . . 
-. . . f 4 5 5 5 2 2 5 4 4 4 f . . . . . 
-. . . f 4 5 5 5 2 4 4 4 e e f . . . . . 
-. 1 f 5 4 4 4 4 4 4 5 4 4 4 f . . . . . 
-. . . f f 5 5 5 5 5 5 4 4 e f . . . . . 
-. . . . f 4 5 5 5 5 5 4 4 4 f . . . . . 
-. . . f 4 f 4 4 4 4 4 4 4 4 f . . . . . 
-. . . f f f f f 5 5 5 4 4 f . . . . . . 
-. . . . . . . . f f f 4 f f . . . . . . 
-. . . . . . . . . f 5 5 4 f . . . . . . 
-. . . . . . . . . . f f f . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
-    boss_guy.setPosition(156, 57)
-    boss_guy.setVelocity(0, 50)
-    boss_guy.setFlag(SpriteFlag.BounceOnWall, true)
-    boss_guy.setFlag(SpriteFlag.StayInScreen, true)
-    info.player2.setScore(10)
+    deploma = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . d d d d d d d d d d d d . . 
+. . d d d d d d d d d d d d . . 
+. . d f d f d f d f d f d d . . 
+. . d d f d f d f d f d f d . . 
+. . d d d d d d d d d d d d . . 
+. . d d f d f d f d f d f d . . 
+. . d f d f d f d f d f d d . . 
+. . d d d d d d d d d d d d . . 
+. . d f d f d f d f d f d d . . 
+. . d d f d f d f d f d f d . . 
+. . d d d d d d d d d d d d . . 
+. . d f d f d f d f d f d d . . 
+. . d d f d f d f d f d f d . . 
+. . d d d d d d d d d d d d . . 
+`, SpriteKind.deploma)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, otherSprite) {
     projectile3.destroy()
@@ -197,11 +217,15 @@ f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f
     mySprite2.setPosition(1, 76)
     controller.moveSprite(mySprite2)
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.deploma, function (sprite, otherSprite) {
+    game.over(true)
+})
 let electricity: Sprite = null
 let projectile3: Sprite = null
-let boss_guy: Sprite = null
+let deploma: Sprite = null
 let mySprite2: Sprite = null
 let projectile2: Sprite = null
+let boss_guy: Sprite = null
 let mySprite3: Sprite = null
 let amm = 0
 scene.setTileMap(img`
@@ -289,6 +313,7 @@ mySprite3 = sprites.create(img`
 mySprite3.setPosition(87, 61)
 info.player2.setScore(1000)
 mySprite3.setVelocity(100, 0)
+game.showLongText("level 1 \"future\" try to get to the boss so you can get your diploma", DialogLayout.Bottom)
 game.onUpdateInterval(1500, function () {
     if (info.score() <= 200) {
         projectile3 = sprites.createProjectileFromSide(img`
@@ -314,7 +339,8 @@ e e e 9 e e e e e 9 e e 9 e e .
     }
 })
 game.onUpdate(function () {
-    if (info.score() == 200) {
+    if (info.score() == 300) {
+        game.showLongText("level 2  buisinesscatch him so you can learn", DialogLayout.Bottom)
         info.changeScoreBy(10)
         mySprite3 = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . 
@@ -365,7 +391,7 @@ game.onUpdate(function () {
 . . . . . . . . . . . . . . f f f . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
+`, SpriteKind.boi)
         mySprite3.setPosition(164, 75)
         mySprite3.setVelocity(-10, 0)
     }
@@ -408,7 +434,7 @@ e e e 9 e e e e e 9 e e 9 e e .
     }
 })
 game.onUpdateInterval(5000, function () {
-    if (info.score() <= 200) {
+    if (info.score() <= 300) {
         projectile3 = sprites.createProjectileFromSide(img`
 . . . . e e e e e e e . . . . . 
 . . e e e e e d e e e e e . . . 
