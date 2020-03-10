@@ -1,5 +1,6 @@
 {
     "name": "final projecto",
+    "description": "",
     "dependencies": {
         "device": "*",
         "palette": "*",
@@ -8,14 +9,16 @@
         "storyboard": "*",
         "Color Fading": "github:jwunderl/pxt-color#v0.0.32"
     },
-    "description": "",
     "files": [
         "main.blocks",
         "main.ts",
         "README.md"
     ],
-    "preferredEditor": "blocksprj",
     "testFiles": [
         "test.ts"
-    ]
+    ],
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "blocksprj"
 }

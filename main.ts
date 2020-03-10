@@ -1,106 +1,97 @@
 namespace SpriteKind {
     export const elec = SpriteKind.create()
+    export const boi = SpriteKind.create()
+}
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`
+    //% blockIdentity=images._tile
+    export const tile1 = img`
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 9 9 2 2 2 2 2 2 2 9 9 2 2 2 
+2 2 2 2 2 2 2 2 2 2 9 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 9 2 2 2 
+2 2 2 2 9 9 2 2 2 2 2 2 9 9 2 2 
+2 2 2 2 2 2 9 9 2 2 2 2 2 9 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 9 9 9 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+`
+    //% blockIdentity=images._tile
+    export const tile2 = img`
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
+`
+    //% blockIdentity=images._tile
+    export const tile3 = img`
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+`
 }
 function projectiles () {
 	
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    game.over(false)
+})
 function waves () {
-    mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-    wind = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-    wind2 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-    wind3 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-    wind4 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-    mySprite.setPosition(161, 111)
-    wind.setPosition(156, 93)
-    wind2.setPosition(155, 79)
-    wind3.setPosition(160, 70)
-    wind4.setPosition(161, 110)
+	
 }
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.player2.changeScoreBy(-1)
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (amm > 0) {
         projectile2 = sprites.createProjectileFromSprite(img`
@@ -123,6 +114,19 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 `, mySprite2, 250, 0)
         amm += -1
     }
+})
+sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
+    info.player2.setScore(1000)
+    scene.setTileMap(img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.showLongText("you actually caught up to me now you die", DialogLayout.Bottom)
@@ -158,6 +162,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     boss_guy.setVelocity(0, 50)
     boss_guy.setFlag(SpriteFlag.BounceOnWall, true)
     boss_guy.setFlag(SpriteFlag.StayInScreen, true)
+    info.player2.setScore(10)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, otherSprite) {
+    projectile3.destroy()
 })
 function surfer () {
     mySprite2 = sprites.create(img`
@@ -189,20 +197,11 @@ f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f
     mySprite2.setPosition(1, 76)
     controller.moveSprite(mySprite2)
 }
-let projectile: Sprite = null
 let electricity: Sprite = null
-let wave4: Sprite = null
-let wave3: Sprite = null
-let wave2: Sprite = null
-let wave1: Sprite = null
+let projectile3: Sprite = null
 let boss_guy: Sprite = null
 let mySprite2: Sprite = null
 let projectile2: Sprite = null
-let wind4: Sprite = null
-let wind3: Sprite = null
-let wind2: Sprite = null
-let wind: Sprite = null
-let mySprite: Sprite = null
 let mySprite3: Sprite = null
 let amm = 0
 scene.setTileMap(img`
@@ -215,7 +214,6 @@ scene.setTileMap(img`
 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
 `)
-waves()
 surfer()
 info.setScore(0)
 info.setLife(10)
@@ -289,9 +287,34 @@ mySprite3 = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
 mySprite3.setPosition(87, 61)
+info.player2.setScore(1000)
 mySprite3.setVelocity(100, 0)
+game.onUpdateInterval(1500, function () {
+    if (info.score() <= 200) {
+        projectile3 = sprites.createProjectileFromSide(img`
+. . . . e e e e e e e . . . . . 
+. . e e e e e d e e e e e . . . 
+. e e d e d e e e e e e e e . . 
+. e e e e e d e e e e e e e . . 
+e e e e e e e e e e e e e e e . 
+e e 9 e e e 9 e e d e 9 e e e 9 
+e d 9 9 e e 9 d d d 9 d e e e . 
+e e e 9 e e e e e 9 e e 9 e e . 
+. e e 9 e 9 e 9 9 e e 9 9 e . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, Math.randomRange(-20, -200), 0)
+        projectile3.setPosition(161, 87)
+        projectile3.setKind(SpriteKind.Food)
+    }
+})
 game.onUpdate(function () {
-    if (info.score() == 1000) {
+    if (info.score() == 200) {
         info.changeScoreBy(10)
         mySprite3 = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . f . . . . . . . . . . . . . . . 
@@ -346,22 +369,56 @@ game.onUpdate(function () {
         mySprite3.setPosition(164, 75)
         mySprite3.setVelocity(-10, 0)
     }
-    wave1.setKind(SpriteKind.Food)
-    wave2.setKind(SpriteKind.Food)
-    wave3.setKind(SpriteKind.Food)
-    wave4.setKind(SpriteKind.Food)
-    electricity.setKind(SpriteKind.elec)
     if (amm == 0) {
-        mySprite2.say("n0 ammo")
+        mySprite2.say("No ammo")
     } else {
-        mySprite.say("")
+        mySprite3.say("")
+    }
+})
+game.onUpdate(function () {
+    if (info.player2.score() == 0) {
+        boss_guy.destroy()
     }
 })
 game.onUpdateInterval(500, function () {
     info.changeScoreBy(10)
 })
+game.onUpdateInterval(2700, function () {
+    if (info.score() <= 200) {
+        projectile3 = sprites.createProjectileFromSide(img`
+. . . . e e e e e e e . . . . . 
+. . e e e e e d e e e e e . . . 
+. e e d e d e e e e e e e e . . 
+. e e e e e d e e e e e e e . . 
+e e e e e e e e e e e e e e e . 
+e e 9 e e e 9 e e d e 9 e e e 9 
+e d 9 9 e e 9 d d d 9 d e e e . 
+e e e 9 e e e e e 9 e e 9 e e . 
+. e e 9 e 9 e 9 9 e e 9 9 e . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, Math.randomRange(-20, -200), 0)
+        projectile3.setPosition(162, 119)
+        projectile3.setKind(SpriteKind.Food)
+    }
+})
 game.onUpdateInterval(5000, function () {
-    wave1 = sprites.createProjectileFromSprite(img`
+    if (info.score() <= 200) {
+        projectile3 = sprites.createProjectileFromSide(img`
+. . . . e e e e e e e . . . . . 
+. . e e e e e d e e e e e . . . 
+. e e d e d e e e e e e e e . . 
+. e e e e e d e e e e e e e . . 
+e e e e e e e e e e e e e e e . 
+e e 9 e e e 9 e e d e 9 e e e 9 
+e d 9 9 e e 9 d d d 9 d e e e . 
+e e e 9 e e e e e 9 e e 9 e e . 
+. e e 9 e 9 e 9 9 e e 9 9 e . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -369,6 +426,26 @@ game.onUpdateInterval(5000, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
+`, Math.randomRange(-20, -200), 0)
+        projectile3.setPosition(163, 57)
+        projectile3.setKind(SpriteKind.Food)
+    }
+})
+game.onUpdateInterval(5000, function () {
+	
+})
+game.onUpdateInterval(3005, function () {
+    if (info.score() <= 200) {
+        projectile3 = sprites.createProjectileFromSide(img`
+. . . . e e e e e e e . . . . . 
+. . e e e e e d e e e e e . . . 
+. e e d e d e e e e e e e e . . 
+. e e e e e d e e e e e e e . . 
+e e e e e e e e e e e e e e e . 
+e e 9 e e e 9 e e d e 9 e e e 9 
+e d 9 9 e e 9 d d d 9 d e e e . 
+e e e 9 e e e e e 9 e e 9 e e . 
+. e e 9 e 9 e 9 9 e e 9 9 e . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -376,51 +453,14 @@ game.onUpdateInterval(5000, function () {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, wind, -50, 0)
-    animation.runImageAnimation(
-    wave1,
-    [img`
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . 9 9 9 . . . . . . . . . . . 9 9 9 
-. . 9 9 9 9 9 . . . . . . . . . 9 9 9 9 
-. 9 9 9 9 9 9 9 . . . . . . . 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 . . . . 9 9 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
-9 9 9 . . . 1 9 9 9 9 9 9 9 9 9 . . 9 9 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . 9 9 9 9 . . . . . . . . . 9 9 9 
-. . . 9 9 9 9 9 9 . . . . . . . 9 9 9 9 
-. . 9 9 9 9 9 9 9 9 9 . . 9 9 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 . . 
-9 9 9 9 . . . 9 9 9 9 9 9 9 9 9 9 . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-`],
-    200,
-    true
-    )
+`, Math.randomRange(-20, -200), 0)
+        projectile3.setPosition(159, 93)
+        projectile3.setKind(SpriteKind.Food)
+    }
 })
 game.onUpdateInterval(1000, function () {
-    amm += 1
-    electricity = sprites.createProjectileFromSprite(img`
+    if (info.player2.score() <= 1000) {
+        electricity = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -447,237 +487,8 @@ game.onUpdateInterval(1000, function () {
 . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, boss_guy, -50, 0)
-})
-game.onUpdateInterval(1000, function () {
-    projectile = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, mySprite, -50, 0)
-    animation.runImageAnimation(
-    projectile,
-    [img`
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . 9 9 9 . . . . . . . . . . . 9 9 9 
-. . 9 9 9 9 9 . . . . . . . . . 9 9 9 9 
-. 9 9 9 9 9 9 9 . . . . . . . 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 . . . . 9 9 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
-9 9 9 . . . 1 9 9 9 9 9 9 9 9 9 . . 9 9 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . 9 9 9 9 . . . . . . . . . 9 9 9 
-. . . 9 9 9 9 9 9 . . . . . . . 9 9 9 9 
-. . 9 9 9 9 9 9 9 9 9 . . 9 9 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 . . 
-9 9 9 9 . . . 9 9 9 9 9 9 9 9 9 9 . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-`],
-    200,
-    true
-    )
-})
-game.onUpdateInterval(1000, function () {
-    wave3 = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, wind3, -50, 0)
-    animation.runImageAnimation(
-    wave3,
-    [img`
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . 9 9 9 . . . . . . . . . . . 9 9 9 
-. . 9 9 9 9 9 . . . . . . . . . 9 9 9 9 
-. 9 9 9 9 9 9 9 . . . . . . . 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 . . . . 9 9 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
-9 9 9 . . . 1 9 9 9 9 9 9 9 9 9 . . 9 9 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . 9 9 9 9 . . . . . . . . . 9 9 9 
-. . . 9 9 9 9 9 9 . . . . . . . 9 9 9 9 
-. . 9 9 9 9 9 9 9 9 9 . . 9 9 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 . . 
-9 9 9 9 . . . 9 9 9 9 9 9 9 9 9 9 . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-`],
-    200,
-    true
-    )
-})
-game.onUpdateInterval(1000, function () {
-    wave2 = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, wind2, -50, 0)
-    animation.runImageAnimation(
-    wave2,
-    [img`
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . 9 9 9 . . . . . . . . . . . 9 9 9 
-. . 9 9 9 9 9 . . . . . . . . . 9 9 9 9 
-. 9 9 9 9 9 9 9 . . . . . . . 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 . . . . 9 9 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
-9 9 9 . . . 1 9 9 9 9 9 9 9 9 9 . . 9 9 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . 9 9 9 9 . . . . . . . . . 9 9 9 
-. . . 9 9 9 9 9 9 . . . . . . . 9 9 9 9 
-. . 9 9 9 9 9 9 9 9 9 . . 9 9 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 . . 
-9 9 9 9 . . . 9 9 9 9 9 9 9 9 9 9 . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-`],
-    200,
-    true
-    )
-})
-game.onUpdateInterval(1000, function () {
-    wave4 = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, wind4, -50, 0)
-    animation.runImageAnimation(
-    wave4,
-    [img`
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . 9 9 9 . . . . . . . . . . . 9 9 9 
-. . 9 9 9 9 9 . . . . . . . . . 9 9 9 9 
-. 9 9 9 9 9 9 9 . . . . . . . 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 . . . . 9 9 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 
-9 9 9 . . . 1 9 9 9 9 9 9 9 9 9 . . 9 9 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-`,img`
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . 9 9 9 9 . . . . . . . . . 9 9 9 
-. . . 9 9 9 9 9 9 . . . . . . . 9 9 9 9 
-. . 9 9 9 9 9 9 9 9 9 . . 9 9 9 9 9 9 9 
-. 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 . . 
-9 9 9 9 . . . 9 9 9 9 9 9 9 9 9 9 . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . 
-`],
-    200,
-    true
-    )
+`, boss_guy, -100, 0)
+        electricity.setKind(SpriteKind.Food)
+    }
+    amm += 1
 })
