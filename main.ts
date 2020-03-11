@@ -81,6 +81,8 @@ namespace myTiles {
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `
 }
+// this makes the boss attack you when you catch up to
+// him
 sprites.onOverlap(SpriteKind.Player, SpriteKind.boi, function (sprite, otherSprite) {
     game.showLongText("you actually caught up to me now you die", DialogLayout.Bottom)
     mySprite3.destroy()
@@ -115,21 +117,20 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.boi, function (sprite, otherSpri
     boss_guy.setVelocity(0, 50)
     boss_guy.setFlag(SpriteFlag.BounceOnWall, true)
     boss_guy.setFlag(SpriteFlag.StayInScreen, true)
-    info.player2.setScore(10)
+    info.player2.setScore(100)
     game.showLongText("level 3 \"leader\" defeat him with your knowledge", DialogLayout.Bottom)
 })
-function projectiles () {
-	
-}
+// this makes it so if you hit the rocks you die
+// instantly
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     game.over(false)
 })
-function waves () {
-	
-}
+// this makes it so the boss dies when it is hit a set
+// amount of times
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.player2.changeScoreBy(-1)
 })
+// this shoots when you press the spacebar
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (amm > 0) {
         projectile2 = sprites.createProjectileFromSprite(img`
@@ -153,8 +154,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         amm += -1
     }
 })
+// this is for when you defeat the final boss it takes
+// you to your deploma
 sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
-    game.showLongText("congratulations you made it to the final stage \"america\"", DialogLayout.Bottom)
+    game.showLongText("congratulations you made it to the final stage \"america\" get your deploma so you can get money", DialogLayout.Bottom)
     scene.setTileMap(img`
 f f f f f f f f f f 
 f f f f f f f f f f 
@@ -165,7 +168,7 @@ f f f f f f f f f f
 f f f f f f f f f f 
 f f f f f f f f f f 
 `)
-    deploma = sprites.create(img`
+    deploma2 = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . d d d d d d d d d d d d . . 
@@ -184,9 +187,12 @@ f f f f f f f f f f
 . . d d d d d d d d d d d d . . 
 `, SpriteKind.deploma)
 })
+// this makes it so if you shoot the rocks it destroys
+// the rocks
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, otherSprite) {
     projectile3.destroy()
 })
+// this is the main character
 function surfer () {
     mySprite2 = sprites.create(img`
 . . . . . . . . . . . . f f f f f f . . . . . . . . . 
@@ -217,12 +223,13 @@ f 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f
     mySprite2.setPosition(1, 76)
     controller.moveSprite(mySprite2)
 }
+// this is for when you get your diploma and you win
 sprites.onOverlap(SpriteKind.Player, SpriteKind.deploma, function (sprite, otherSprite) {
     game.over(true)
 })
 let electricity: Sprite = null
 let projectile3: Sprite = null
-let deploma: Sprite = null
+let deploma2: Sprite = null
 let mySprite2: Sprite = null
 let projectile2: Sprite = null
 let boss_guy: Sprite = null
@@ -309,11 +316,12 @@ mySprite3 = sprites.create(img`
 . . . . . . . . . . . . . . f f f . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, SpriteKind.Enemy)
+`, SpriteKind.boi)
 mySprite3.setPosition(87, 61)
 info.player2.setScore(1000)
 mySprite3.setVelocity(100, 0)
 game.showLongText("level 1 \"future\" try to get to the boss so you can get your diploma", DialogLayout.Bottom)
+// Sends rocks at the player
 game.onUpdateInterval(1500, function () {
     if (info.score() <= 200) {
         projectile3 = sprites.createProjectileFromSide(img`
@@ -338,8 +346,9 @@ e e e 9 e e e e e 9 e e 9 e e .
         projectile3.setKind(SpriteKind.Food)
     }
 })
+// this is for when you catch up to the boss
 game.onUpdate(function () {
-    if (info.score() == 300) {
+    if (info.score() == 200) {
         game.showLongText("level 2  buisinesscatch him so you can learn", DialogLayout.Bottom)
         info.changeScoreBy(10)
         mySprite3 = sprites.create(img`
@@ -401,14 +410,14 @@ game.onUpdate(function () {
         mySprite3.say("")
     }
 })
+// this makes it so the final boss dies when you hit
+// him a set amount of times
 game.onUpdate(function () {
     if (info.player2.score() == 0) {
         boss_guy.destroy()
     }
 })
-game.onUpdateInterval(500, function () {
-    info.changeScoreBy(10)
-})
+// this is the code for the rocks being  shot at you
 game.onUpdateInterval(2700, function () {
     if (info.score() <= 200) {
         projectile3 = sprites.createProjectileFromSide(img`
@@ -433,8 +442,9 @@ e e e 9 e e e e e 9 e e 9 e e .
         projectile3.setKind(SpriteKind.Food)
     }
 })
+// this sends rocks at you
 game.onUpdateInterval(5000, function () {
-    if (info.score() <= 300) {
+    if (info.score() <= 200) {
         projectile3 = sprites.createProjectileFromSide(img`
 . . . . e e e e e e e . . . . . 
 . . e e e e e d e e e e e . . . 
@@ -457,9 +467,7 @@ e e e 9 e e e e e 9 e e 9 e e .
         projectile3.setKind(SpriteKind.Food)
     }
 })
-game.onUpdateInterval(5000, function () {
-	
-})
+// this sends rocks at you
 game.onUpdateInterval(3005, function () {
     if (info.score() <= 200) {
         projectile3 = sprites.createProjectileFromSide(img`
@@ -484,6 +492,12 @@ e e e 9 e e e e e 9 e e 9 e e .
         projectile3.setKind(SpriteKind.Food)
     }
 })
+// this increases your score every second
+game.onUpdateInterval(1000, function () {
+    info.changeScoreBy(10)
+})
+// this makes it so the final boss shoots his
+// electricity
 game.onUpdateInterval(1000, function () {
     if (info.player2.score() <= 1000) {
         electricity = sprites.createProjectileFromSprite(img`
